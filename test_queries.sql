@@ -1,37 +1,41 @@
--- Basic queries
-SELECT student_id, stu_fname, stu_lname, stu_email FROM STUDENT;
+--Select first name, last name, and email for all students.
+SELECT student_id, first_name, last_name, email FROM student;
 
-SELECT DISTINCT location_building FROM MEETING;
+-- Select all unique building names from the Location table.
+SELECT DISTINCT location_building FROM LOCATION;
 
-SELECT DISTINCT term_season, term_year FROM TERM;
+-- Select name and start date for all terms.
+SELECT DISTINCT name, start_date FROM TERM;
 
-SELECT course_code, term_year, term_season, lab_number, student_id, changed_by FROM PROGRESS_LOG;
+-- Select progress ID, changed_by, and new_value from Change Log.
+SELECT progress_id, user_id, new_value FROM CHANGE_LOG JOIN USERS ON CHANGE_LOG.changed_by = USERS.user_id;
 
--- JOINS
-SELECT course_name, section_CRN, term_year FROM COURSE JOIN SECTION ON COURSE.course_code = SECTION.course_code;
+-- Select course title, section code, and term code for all sections.
+SELECT title, section_code, term_code FROM COURSE JOIN SECTION ON COURSE.course_code = SECTION.course_code;
 
-SELECT meeting_date, meet_time, location_building, location_room, section_CRN FROM MEETING WHERE section_CRN = ####;
+-- Select day, start time, and building for a specific section code.
+SELECT day_of_week, start_time, location_building, location_room FROM SECTION JOIN LOCATION ON SECTION.location = LOCATION.location_code WHERE SECTION.section_code = '###';
 
-SELECT lab_number, session_date, SECTION.section_CRN FROM LAB_SESSION JOIN SECTION
-                                                     ON SECTION.section_CRN = LAB_SESSION.section_CRN AND
-                                                        SECTION.term_year = LAB_SESSION.term_year AND
-                                                        SECTION.term_season = LAB_SESSION.term_season;
+-- Select lab number and start datetime by joining Lab Assignment and Lab Event.
+SELECT LAB_ASSIGNMENT.lab_number, start_datetime FROM LAB_ASSIGNMENT JOIN LAB_EVENT
+                                                     ON LAB_ASSIGNMENT.assignment_id = LAB_EVENT.assignment_id;
+-- Select all students and their corresponding set.
+SELECT first_name, last_name, set_letter FROM STUDENT JOIN SET ON STUDENT.set_code = SET.set_code;
 
-SELECT stu_fname, stu_lname, set_letter, set_creation_season FROM STUDENT JOIN SECTION
-                                                             ON STUDENT.set_creation_year = SET.set_creation_year AND
-                                                                STUDENT.set_creation_season = SET.set_creation_season AND
-                                                                STUDENT.set_letter = SET.set_letter;
-
--- Filtering queries
+-- Select progress records where attendance is 'Present'.
 SELECT * FROM PROGRESS WHERE attendance = 'P'; -- P for present
 
-SELECT * FROM MEETING WHERE is_online = TRUE;
+-- Select section codes for terms with 'Fall' in the name.
+SELECT * FROM SECTION JOIN TERM ON SECTION.term_code = TERM.term_code WHERE LOWER(term.name) LIKE LOWER('%fall%');
 
-SELECT student_id FROM PROGRESS WHERE NOT IN(SELECT student_id FROM PROGRESS WHERE in_lab_submission NOT NULL);
+-- Select students who have no records in the Progress table.
+SELECT student_id FROM STUDENT WHERE student_id NOT IN(SELECT student_id FROM PROGRESS WHERE inlab_submitted_at IS NOT NULL);
 
--- Aggregation queries
-SELECT course_code, COUNT(section_CRN) FROM SECTION GROUP BY course_code;
+-- Count the number of sections for each course code.
+SELECT course_code, COUNT(section_code) FROM SECTION GROUP BY course_code;
 
-SELECT AVG(instructor_assesment) FROM PROGRESS;
+-- Calculate the average instructor assessment score from Progress.
+SELECT AVG(instructor_assessment) FROM PROGRESS;
 
-SELECT COUNT(student_id) FROM INDEPENDENT_STUDENT_ENROLLMENT GROUP BY section_CRN;
+-- Count students enrolled in each independent study section.
+SELECT COUNT(student_id) FROM INDEPENDENT_STUDENT_ENROLMENT GROUP BY section_code;

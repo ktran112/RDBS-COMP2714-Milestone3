@@ -20,17 +20,17 @@ VALUES ('COMP2714', 'Relational Database Systems', 3);
 -- Seed data for section table
 INSERT INTO section (section_code, course_code, term_code, set_code, type, day_of_week, start_time, end_time, location)
 VALUES ('LO1', 'COMP2714', 202530, 'A', 'LAB',
-        'Mon', 9:30, 11:20, 'BBY-SW01-3460'),
+        'Mon', '9:30', '11:20', 'BBY-SW01-3460'),
         ('LO2', 'COMP2714', 202530, 'B', 'LAB',
-         'Mon', 13:30, 15:20, 'BBY-SW01-3465'),
+         'Mon', '13:30', '15:20', 'BBY-SW01-3465'),
         ('LO3', 'COMP2714', 202530, 'C', 'LAB',
-         'Tue', 18:30, 20:20, 'BBY-SW03-2605'),
+         'Tue', '18:30', '20:20', 'BBY-SW03-2605'),
         ('LO4', 'COMP2714', 202530, 'D', 'LAB',
-         'Wed', 9:30, 11:20, 'BBY-SE12-101'),
+         'Wed', '9:30', '11:20', 'BBY-SE12-101'),
         ('LO5', 'COMP2714', 202530, 'E', 'LAB',
-         'Wed', 13:30, 15:20, 'DTC-310'),
+         'Wed', '13:30', '15:20', 'DTC-310'),
         ('LO1', 'COMP2714', 202530, 'F', 'LAB',
-         'Thu', 18:30, 20:20, 'DTC-318');
+         'Thu', '18:30', '20:20', 'DTC-318');
 
 -- Seed data for student table
 INSERT INTO student (student_id, set_code, first_name, last_name, email)
@@ -62,7 +62,7 @@ VALUES ('LAB01', 'COMP2714', '202530', 1, 'Environment Setup & Intro SQL'),
        ('LAB05', 'COMP2714', '202530', 5, 'DDL Implementation'),
        ('LAB06', 'COMP2714', '202530', 6, 'DML: INSERT/UPDATE/DELETE'),
        ('LAB07', 'COMP2714', '202530', 7, 'SELECT & JOIN Practice'),
-       ('LAB08', 'COMP2714', '202530', 8, 'Views & Indexes'),;
+       ('LAB08', 'COMP2714', '202530', 8, 'Views & Indexes');
 
 -- Seed data for lab_event table
 
