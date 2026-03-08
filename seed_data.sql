@@ -33,28 +33,42 @@ VALUES ('LO1', 'COMP2714', 202530, 'A', 'LAB',
          'Thu', 18:30, 20:20, 'DTC-318');
 
 -- Seed data for student table
-INSERT INTO
+INSERT INTO student (student_id, set_code, first_name, last_name, email)
+VALUES  ('A001', 'A', 'Ava', 'Nguyen', 'ava.nguyen@my.bcit.ca'),
+        ('A002', 'A', 'Noah', 'Kim', 'noah.kim@my.bcit.ca'),
+        ('A003', 'A', 'Oliver', 'Singh', 'oliver,singh@my.bcit.ca'),
+        ('B001', 'B', 'Maya', 'Fischer', 'maya.fischer@my.bcit.ca'),
+        ('B002', 'B', 'Leo', 'Park', 'leo.park@my.bcit.ca'),
+        ('B003', 'B', 'ZoÃ©', 'Martin', 'zoe.martin@my.bcit.ca'),
+        ('C001', 'C', 'Sofia', 'Chen', 'sofia.chen@my.bcit.ca'),
+        ('C002', 'C', 'Arjun', 'Patel', 'arjun.patel@my.bcit.ca'),
+        ('C003', 'C', 'Liam', 'Oâ€™Reilly', 'liam.oreilly@my.bcit.ca'),
+        ('D001', 'D', 'Layla', 'Haddad', 'layla.haddad@my.bcit.ca'),
+        ('D002', 'D', 'Ethan', 'Wong', 'ethan.wong@my.bcit.ca'),
+        ('D003', 'D', 'Nora', 'Iverson', 'nora.iverson@my.bcit.ca'),
+        ('E001', 'E', 'Diego', 'Alvarez', 'diego.alvarez@my.bcit.ca'),
+        ('E002', 'E', 'Hana', 'Yamamoto', 'hana.yamamoto@my.bcit.ca'),
+        ('E003', 'E', 'Farah', 'Rahimi', 'farah.rahimi@my.bcit.ca'),
+        ('F001', 'F', 'Marco', 'Russo', 'marco.russo@my.bcit.ca'),
+        ('F002', 'F', 'Amir', 'Kazemi', 'amir.kazemi@my.bcit.ca'),
+        ('F003', 'F', 'Chloe', 'Dubois', 'chloe.dubois@my.bcit.ca');
 
-student_id	set_code	first_name	last_name	email
-A001	A	Ava	Nguyen	ava.nguyen@my.bcit.ca
-A002	A	Noah	Kim	noah.kim@my.bcit.ca
-A003	A	Oliver	Singh	oliver.singh@my.bcit.ca
-B001	B	Maya	Fischer	maya.fischer@my.bcit.ca
-B002	B	Leo	Park	leo.park@my.bcit.ca
-B003	B	ZoÃ©	Martin	zoe.martin@my.bcit.ca
-C001	C	Sofia	Chen	sofia.chen@my.bcit.ca
-C002	C	Arjun	Patel	arjun.patel@my.bcit.ca
-C003	C	Liam	Oâ€™Reilly	liam.oreilly@my.bcit.ca
-D001	D	Layla	Haddad	layla.haddad@my.bcit.ca
-D002	D	Ethan	Wong	ethan.wong@my.bcit.ca
-D003	D	Nora	Iverson	nora.iverson@my.bcit.ca
-E001	E	Diego	Alvarez	diego.alvarez@my.bcit.ca
-E002	E	Hana	Yamamoto	hana.yamamoto@my.bcit.ca
-E003	E	Farah	Rahimi	farah.rahimi@my.bcit.ca
-F001	F	Marco	Russo	marco.russo@my.bcit.ca
-F002	F	Amir	Kazemi	amir.kazemi@my.bcit.ca
-F003	F	Chloe	Dubois	chloe.dubois@my.bcit.ca
+-- Seed data for lab_assignment table
+INSERT INTO lab_assignment (assignment_id, course_code, term_code, lab_number, title)
+VALUES ('LAB01', 'COMP2714', '202530', 1, 'Environment Setup & Intro SQL'),
+       ('LAB02', 'COMP2714', '202530', 2, 'Conceptual â†’ Logical Mapping'),
+       ('LAB03', 'COMP2714', '202530', 3, 'Logical ERD & Constraints'),
+       ('LAB04', 'COMP2714', '202530', 4, 'Normalization to 3NF'),
+       ('LAB05', 'COMP2714', '202530', 5, 'DDL Implementation'),
+       ('LAB06', 'COMP2714', '202530', 6, 'DML: INSERT/UPDATE/DELETE'),
+       ('LAB07', 'COMP2714', '202530', 7, 'SELECT & JOIN Practice'),
+       ('LAB08', 'COMP2714', '202530', 8, 'Views & Indexes'),;
 
+-- Seed data for lab_event table
 
+-- Seed data for user table
 
+-- Seed data for progress table
+
+-- Seed data for progress_change_log table
 
