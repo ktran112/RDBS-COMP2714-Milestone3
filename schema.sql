@@ -23,7 +23,7 @@ CREATE TABLE TERM (
 
 CREATE TABLE COURSE (
     course_code VARCHAR(8),
-    title VARCHAR(30) NOT NULL,
+    title VARCHAR(50) NOT NULL,
     credits SMALLINT NOT NULL,
     CONSTRAINT pk_course PRIMARY KEY (course_code),
     CONSTRAINT unique_title UNIQUE(title)
