@@ -31,7 +31,7 @@ CREATE TABLE COURSE (
 
 -- example set code = '202530C'
 CREATE TABLE SET (
-    set_code CHAR(7),
+    set_code CHAR(7) GENERATED ALWAYS AS (creation_term || set_letter) STORED,
     set_letter CHAR(1) NOT NULL,
     campus campus NOT NULL,
     creation_term CHAR(6) NOT NULL,
@@ -40,7 +40,7 @@ CREATE TABLE SET (
 );
 
 CREATE TABLE USERS (
-    user_id CHAR(9),
+    user_id CHAR(15),
     display_name VARCHAR(30) NOT NULL,
     role role NOT NULL,
     email VARCHAR(40) NOT NULL,
@@ -139,7 +139,7 @@ CREATE TABLE PROGRESS (
 CREATE TABLE CHANGE_LOG (
     change_id CHAR(16),
     progress_id CHAR(16) NOT NULL,
-    changed_by CHAR(9) NOT NULL,
+    changed_by CHAR(15) NOT NULL,
     changed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     field VARCHAR(50) NOT NULL,
     old_value TEXT,

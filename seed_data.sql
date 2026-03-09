@@ -4,13 +4,13 @@ INSERT INTO term
       start_date, end_date)
 VALUES
     ( '202510', 'Winter 2025',
-      1/6/2025, 4/11/2025),
+      '1/6/2025', '4/11/2025'),
 
     ( '202520', 'Spring/Summer 2025',
-      4/28/2025, 8/8/2025),
+      '4/28/2025', '8/8/2025'),
 
     ( '202530', 'Fall 2025',
-      9/2/2025, 12/12/2025),
+      '9/2/2025', '12/12/2025'),
 
     ( '202540', 'Winter 2026',
       '2026-01-05', '2026-04-10'),
@@ -69,26 +69,19 @@ VALUES
 
 -- Seed data for set table
 INSERT INTO set
-    ( set_code, set_letter,
-      campus, creation_term)
+    ( set_letter, campus, creation_term)
 VALUES
-    ( '', 'A',
-      'BBY', '202510'),
+    ( 'A', 'BBY', '202530'),
 
-    ( '', 'B',
-     'BBY', '202510'),
+    ( 'B', 'BBY', '202530'),
 
-    ( '', 'C',
-      'BBY', '202520'),
+    ( 'C', 'BBY', '202530'),
 
-    ( '', 'D',
-      'BBY', '202520'),
+    ( 'D', 'BBY', '202530'),
 
-    ( '', 'E',
-      'DTC', '202540'),
+    ( 'E', 'DTC', '202530'),
 
-    ( '', 'F',
-      'DTC', '202550');
+    ( 'F', 'DTC', '202530');
 
 -- Seed data for user table
 INSERT INTO users
@@ -116,113 +109,113 @@ INSERT INTO student
   first_name, last_name,
   email)
 VALUES
-    ( 'A001', 'A',
+    ( 'A001', '202530A',
       'Ava', 'Nguyen',
       'ava.nguyen@my.bcit.ca'),
 
-    ( 'A002', 'A',
+    ( 'A002', '202530A',
       'Noah', 'Kim',
       'noah.kim@my.bcit.ca'),
 
-    ( 'A003', 'A',
+    ( 'A003', '202530A',
       'Oliver', 'Singh',
       'oliver,singh@my.bcit.ca'),
 
-    ( 'B001', 'B',
+    ( 'B001', '202530B',
       'Maya', 'Fischer',
       'maya.fischer@my.bcit.ca'),
 
-    ( 'B002', 'B',
+    ( 'B002', '202530B',
       'Leo', 'Park',
       'leo.park@my.bcit.ca'),
 
-    ( 'B003', 'B',
-      'ZoÃ©', 'Martin',
+    ( 'B003', '202530B',
+      'Zoé', 'Martin',
       'zoe.martin@my.bcit.ca'),
 
-    ( 'C001', 'C',
+    ( 'C001', '202530C',
       'Sofia', 'Chen',
       'sofia.chen@my.bcit.ca'),
 
-    ( 'C002', 'C',
+    ( 'C002', '202530C',
       'Arjun', 'Patel',
       'arjun.patel@my.bcit.ca'),
 
-    ( 'C003', 'C',
-      'Liam', 'Oâ€™Reilly',
+    ( 'C003', '202530C',
+      'Liam', 'O’Reilly',
       'liam.oreilly@my.bcit.ca'),
 
-    ( 'D001', 'D',
+    ( 'D001', '202530D',
       'Layla', 'Haddad',
       'layla.haddad@my.bcit.ca'),
 
-    ( 'D002', 'D',
+    ( 'D002', '202530D',
       'Ethan', 'Wong',
       'ethan.wong@my.bcit.ca'),
 
-    ( 'D003', 'D',
+    ( 'D003', '202530D',
       'Nora', 'Iverson',
       'nora.iverson@my.bcit.ca'),
 
-    ( 'E001', 'E',
+    ( 'E001', '202530E',
       'Diego', 'Alvarez',
       'diego.alvarez@my.bcit.ca'),
 
-    ( 'E002', 'E',
+    ( 'E002', '202530E',
       'Hana', 'Yamamoto',
       'hana.yamamoto@my.bcit.ca'),
 
-    ( 'E003', 'E',
+    ( 'E003', '202530E',
       'Farah', 'Rahimi',
       'farah.rahimi@my.bcit.ca'),
 
-    ( 'F001', 'F',
+    ( 'F001', '202530F',
       'Marco', 'Russo',
       'marco.russo@my.bcit.ca'),
 
-    ( 'F002', 'F',
+    ( 'F002', '202530F',
       'Amir', 'Kazemi',
       'amir.kazemi@my.bcit.ca'),
 
-    ( 'F003', 'F',
+    ( 'F003', '202530F',
       'Chloe', 'Dubois',
       'chloe.dubois@my.bcit.ca');
 
 -- Seed data for section table
 INSERT INTO section
-    ( section_code, course_code,
-      term_code, set_code,
-      type, day_of_week,
-      start_time, end_time, location)
+( section_code, course_code,
+  term_code, set_code,
+  type, day_of_week,
+  start_time, end_time, location)
 VALUES
     ( 'L01', 'COMP2714',
-      202530, 'A',
-      'Lab', 'Mon',
+      '202530', '202530A',
+      'lab', 'Mon',
       '9:30', '11:20', 'BBY-SW01-3460'),
 
     ( 'L02', 'COMP2714',
-      202530, 'B',
-      'Lab', 'Mon',
+      '202530', '202530B',
+      'lab', 'Mon',
       '13:30', '15:20', 'BBY-SW01-3465'),
 
     ( 'L03', 'COMP2714',
-      202530, 'C',
-      'Lab', 'Tue',
+      '202530', '202530C',
+      'lab', 'Tue',
       '18:30', '20:20', 'BBY-SW03-2605'),
 
     ( 'L04', 'COMP2714',
-      202530, 'D',
-      'Lab', 'Wed',
+      '202530', '202530D',
+      'lab', 'Wed',
       '9:30', '11:20', 'BBY-SE12-101'),
 
     ( 'L05', 'COMP2714',
-      202530, 'E',
-      'Lab', 'Wed',
+      '202530', '202530E',
+      'lab', 'Wed',
       '13:30', '15:20', 'DTC-310'),
 
     ( 'L06', 'COMP2714',
-      202530, 'F',
-      'Lab', 'Thu',
+      '202530', '202530F',
+      'lab', 'Thu',
       '18:30', '20:20', 'DTC-318');
 
 -- Seed data for lab_assignment table
@@ -237,7 +230,7 @@ VALUES
 
     ( 'L02', 'COMP2714',
       '202530', 2,
-      'Conceptual â†’ Logical Mapping'),
+      'Conceptual to Logical Mapping'),
 
     ( 'L03', 'COMP2714',
       '202530', 3,
@@ -387,7 +380,7 @@ VALUES
       8.2, FALSE),
 
     ( 'A002-L01-L02', 'A002', 'L01-L02',
-      2, 'in progress', TRUE,
+      2, 'open', TRUE,
       'P', '2025-09-15 10:40:00', 'https://submit.bcit.ca/comp2714/inlab/A002-L01-L02.pdf',
       NULL, NULL, NULL,
       NULL, FALSE),
@@ -423,7 +416,7 @@ VALUES
       8.2, FALSE),
 
     ( 'B002-L02-L02', 'B002', 'L02-L02',
-      2, 'in progress', TRUE,
+      2, 'open', TRUE,
       'P', '2025-09-15 14:40:00', 'https://submit.bcit.ca/comp2714/inlab/B002-L02-L02.pdf',
       NULL, NULL, NULL,
       NULL, FALSE),
@@ -459,7 +452,7 @@ VALUES
       8.2, FALSE),
 
     ( 'C002-L03-L02', 'C002', 'L03-L02',
-      2, 'in progress', TRUE,
+      2, 'open', TRUE,
       'P', '2025-09-16 19:40:00', 'https://submit.bcit.ca/comp2714/inlab/C002-L03-L02.pdf',
       NULL, NULL, NULL,
       NULL, FALSE),
@@ -477,7 +470,7 @@ VALUES
       6.7, FALSE),
 
     ( 'D001-L04-L01', 'D001', 'L04-L01',
-      1, 'in progress', TRUE,
+      1, 'open', TRUE,
       'P', '2025-09-10 10:40:00', 'https://submit.bcit.ca/comp2714/inlab/D001-L04-L01.pdf',
       NULL, NULL, NULL,
       NULL, FALSE),
@@ -495,7 +488,7 @@ VALUES
       8.2, FALSE),
 
     ( 'D002-L04-L02', 'D002', 'L04-L02',
-      2, 'in progress', TRUE,
+      2, 'open', TRUE,
       'P', '2025-09-17 10:40:00', 'https://submit.bcit.ca/comp2714/inlab/D002-L04-L02.pdf',
       NULL, NULL, NULL,
       NULL, FALSE),
@@ -513,7 +506,7 @@ VALUES
       6.7, FALSE),
 
     ( 'E001-L01-L01', 'E001', 'L05-L01',
-      1, 'in progress', TRUE,
+      1, 'open', TRUE,
       'P', '2025-09-10 14:45:00', 'https://submit.bcit.ca/comp2714/inlab/E001-L05-L01.pdf',
       '2025-09-11 16:45:00', 'https://submit.bcit.ca/comp2714/polished/E001-L05-L01.pdf', 8.5,
       8.2, FALSE),
@@ -567,7 +560,7 @@ VALUES
       8.2, FALSE),
 
     ( 'F002-L01-L02', 'F002', 'L06-L02',
-      2, 'in progress', TRUE,
+      2, 'open', TRUE,
       'P', '2025-09-18 19:40:00', 'https://submit.bcit.ca/comp2714/inlab/F002-L06-L02.pdf',
       NULL, NULL, NULL,
       NULL, FALSE),
@@ -598,8 +591,8 @@ VALUES
 
     ( 'chg2', 'A003-L01-L02',
       'u_ta1', '9/16/2025 20:45:00',
-      'status', 'In Progress',
-      'Submitted',
+      'status', 'open',
+      'submitted',
       'Student submitted during lab; TA marked as submitted'),
 
     ( 'chg3', 'B003-L02-L01',
